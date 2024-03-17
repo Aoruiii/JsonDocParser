@@ -12,3 +12,4 @@
 /Users/aorui.tan/Desktop/Web Developer/C#/Game Data Parser/GameDataParser/obj/Debug/net8.0/GameDataParser.pdb
 /Users/aorui.tan/Desktop/Web Developer/C#/Game Data Parser/GameDataParser/obj/Debug/net8.0/GameDataParser.genruntimeconfig.cache
 /Users/aorui.tan/Desktop/Web Developer/C#/Game Data Parser/GameDataParser/obj/Debug/net8.0/ref/GameDataParser.dll
+/Users/aorui.tan/Desktop/Web Developer/C#/Game Data Parser/GameDataParser/obj/Debug/net8.0/GameDataParser.sourcelink.json

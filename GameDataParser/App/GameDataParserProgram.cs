@@ -4,18 +4,21 @@ using GameDataParser.UserInteraction;
 using GameDataParser.FileRepository;
 using GameDataParser.ExceptionHandling;
 using GameDataParser.VideoGame;
+using System.Text.Json;
 
 
 public class GameDataParserProgram
 {
-    private IUserInteraction _userInteraction;
-    private IFileRepository _fileRepository;
+    private readonly IUserInteractor _userInteraction;
+    private readonly IFileReader _fileReader;
 
 
-    public GameDataParserProgram(IUserInteraction userInteraction, IFileRepository fileRepository)
+
+
+    public GameDataParserProgram(IUserInteractor userInteraction, IFileReader fileReader)
     {
         _userInteraction = userInteraction;
-        _fileRepository = fileRepository;
+        _fileReader = fileReader;
     }
 
     public void Run()
@@ -24,23 +27,20 @@ public class GameDataParserProgram
         IEnumerable<VideoGame> videoGames = default;
         try
         {
-            videoGames = _fileRepository.Read(fileName);
+            videoGames = _fileReader.Read(fileName);
         }
-        catch (JsonNotInValidFormatException ex)
+        catch (JsonException ex)
         {
-            var originalConsoleColor = Console.ForegroundColor;
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(ex.Message);
-            Console.ForegroundColor = originalConsoleColor;
+            _userInteraction.PrintError(ex.Message);
             throw;
         }
 
         if (videoGames.Count() > 0)
         {
-            Console.WriteLine("Loaded games are:");
+            _userInteraction.PrintMessage("Loaded games are:");
             foreach (VideoGame videoGame in videoGames)
             {
-                Console.WriteLine(videoGame);
+                _userInteraction.PrintMessage(videoGame.ToString());
             }
         }
 

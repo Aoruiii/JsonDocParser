@@ -1,10 +1,17 @@
 namespace GameDataParser.ExceptionHandling;
 
-public static class Logger
+public class Logger
 {
-    public static void log(Exception ex)
+    private string _logFilePath;
+
+    public Logger(string logFilePath)
     {
-        string logFilePath = "log.txt";
+        _logFilePath = logFilePath;
+    }
+
+    public void Log(Exception ex)
+    {
+        string logFilePath = _logFilePath;
         string logMessage = $"[{DateTime.Now}], Exception message: {ex.Message}, Stack trace: {ex.StackTrace}{Environment.NewLine}";
         File.AppendAllText(logFilePath, logMessage);
     }

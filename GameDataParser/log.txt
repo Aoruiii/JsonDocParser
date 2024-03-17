@@ -27,3 +27,32 @@
 ], Stack trace:    at FileRepository.Read(String fileName) in /Users/aorui.tan/Desktop/Web Developer/C#/Game Data Parser/GameDataParser/Program.cs:line 116
    at GameDataParserProgram.Run() in /Users/aorui.tan/Desktop/Web Developer/C#/Game Data Parser/GameDataParser/Program.cs:line 40
    at Program.<Main>$(String[] args) in /Users/aorui.tan/Desktop/Web Developer/C#/Game Data Parser/GameDataParser/Program.cs:line 13
+[16/3/2024 4:56:07 pm], Exception message: JSON in the /Users/aorui.tan/Desktop/Web Developer/C#/Game Data Parser/GameDataParser/bin/Debug/net8.0/gamesInvalidFormat.json  was not in a valid format. JSON body:[
+  {
+    "Title": "Stardew Valley",
+    "ReleaseYear": 2016,
+    "Rating": 4.9
+  }
+  {
+    "Title": "Frostpunk",
+    "ReleaseYear": 2017,
+    "Rating": 4.7
+  },
+  {
+    "Title": "Oxygen Not Included",
+    "ReleaseYear": 2017,
+    "Rating": 4.8
+  },
+  {
+    "Title": "Red Dead Redemtpion II",
+    "ReleaseYear": 2018,
+    "Rating": 4.8
+  },
+  {
+    "Title": "Portal 2",
+    "ReleaseYear": 2011,
+    "Rating": 4.8
+  }
+], Stack trace:    at GameDataParser.FileRepository.LocalFileReader.Read(String fileName) in /Users/aorui.tan/Desktop/Web Developer/C#/Game Data Parser/GameDataParser/FileRepository/LocalFileReader.cs:line 19
+   at GameDataParser.App.GameDataParserProgram.Run() in /Users/aorui.tan/Desktop/Web Developer/C#/Game Data Parser/GameDataParser/App/GameDataParserProgram.cs:line 29
+   at Program.<Main>$(String[] args) in /Users/aorui.tan/Desktop/Web Developer/C#/Game Data Parser/GameDataParser/Program.cs:line 18

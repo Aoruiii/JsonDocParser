@@ -1,6 +1,6 @@
 namespace GameDataParser.UserInteraction;
 
-public class UserInteraction : IUserInteraction
+public class ConsoleUserInteractor : IUserInteractor
 {
     public string GetFileNameFromUser()
     {
@@ -29,6 +29,19 @@ public class UserInteraction : IUserInteraction
                 continue;
             }
         }
+    }
+
+    public void PrintMessage(string message)
+    {
+        Console.WriteLine(message);
+    }
+
+    public void PrintError(string message)
+    {
+        var originalConsoleColor = Console.ForegroundColor;
+        Console.ForegroundColor = ConsoleColor.Red;
+        PrintMessage(message);
+        Console.ForegroundColor = originalConsoleColor;
     }
 }
 

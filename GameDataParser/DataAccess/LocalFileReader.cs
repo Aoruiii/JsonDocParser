@@ -4,7 +4,7 @@ using System.Text.Json;
 using GameDataParser.VideoGame;
 using GameDataParser.ExceptionHandling;
 
-public class FileRepository : IFileRepository
+public class LocalFileReader : IFileReader
 {
     public IEnumerable<VideoGame> Read(string fileName)
     {
@@ -16,7 +16,7 @@ public class FileRepository : IFileRepository
         }
         catch (JsonException ex)
         {
-            throw new JsonNotInValidFormatException($"JSON in the {fileName}  was not in a valid format. JSON body:" + jsonContent, ex);
+            throw new JsonException($"JSON in the {fileName}  was not in a valid format. JSON body:" + jsonContent, ex);
         }
     }
 

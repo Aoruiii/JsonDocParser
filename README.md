@@ -1,5 +1,6 @@
-Overview                                                                                                                        
-| This application reads and deserializes video game data  from a JSON file. It is robust and should not crash under any circumstances. Any unhandled exceptions are written to the log file. | Console App |
+## Overview                                                                                                                        
+
+This application reads and deserializes video game data  from a JSON file. It is robust and should not crash under any circumstances. Any unhandled exceptions are written to the log file.
 
 ## Main application workflow    
 
